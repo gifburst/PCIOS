@@ -169,6 +169,7 @@ namespace OSProject
                            break;
 
                         case "5": // X-O Game.
+                           Console.Clear();
                            Game.Main();
                            break;
 
