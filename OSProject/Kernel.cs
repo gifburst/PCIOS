@@ -29,58 +29,9 @@ namespace OSProject
             {
                 Directory.CreateDirectory(@"0:\RecycleBin");
             }
-
-            LogoASCII.main(); // Initialize Logo.
-
-            console.Writeline("Copyright (c) 2021/22 Squirrel Computers and Squirrix.") 
+            Console.Clear();
+            console.Writeline ("[1] PCI/OS [2] Calculator [3] Clock [4] Write [5] X-O game [6] Reboot [7] Shutdown");
             
-            Console.WriteLine(""); // Get system date & time.
-            DateTime date = DateTime.Now;
-            Console.WriteLine(date);
-
-            Console.WriteLine("\n\nSQUIRRIX has booted successfully! Press ENTER to continue");
-            Console.ReadLine();
-            Console.WriteLine("Enter a command or type 'HELP' to get started.");
-
-            //----------------------------------------------------------------------------------------------------
-        }
-
-        char x = '1';
-
-        protected override void Run() // Runs recursively according to COSMOS documentation. No need for while loop.
-        {
-            
-            string choice, un, pass;
-            FileSystem f = new FileSystem();
-
-            if (x == '1')
-            {
-            repass:
-                Console.WriteLine("The system is locked! Log in to continue.\n");
-                Console.WriteLine("Username");
-                un = Console.ReadLine();
-                Console.WriteLine("\nPassword");
-                pass = Console.ReadLine();
-
-                if (un == " main" && pass == "build")
-                {
-                    x = '0';
-                    Console.WriteLine("The system was unlocked!");
-                    Console.WriteLine("Enter a command or type 'HELP' to get started.");
-                }
-                else
-                {
-                    x = '1';
-                    Console.WriteLine("Wrong password! Please enter again.");
-                    goto repass;
-                }
-                            
-            }
-            do
-            {
-                if (x == '0')
-                {
-                AccCommand:
 
                     choice = Console.ReadLine();
 
@@ -208,12 +159,8 @@ namespace OSProject
                             }
                             break;
 
-                        case "squiware":
-                            LogoS.main();
-                            Programs.main();
-                            break;
                             
-                        case "1": // Text Editor.
+                        case "4": // Text Editor.
                             Editor.Main();
                             break;
 
@@ -221,17 +168,8 @@ namespace OSProject
                             Calculator.main();
                            break;
 
-                        case "3": // Music Player.
-                           Song.main();
-                           break;
-
-                        case "4": // X-O Game.
+                        case "5": // X-O Game.
                            Game.Main();
-                           break;
-
-                        case "5": // Basic GUI.
-                           GUI g = new GUI();
-                           g.main();
                            break;
 
                         case "fstats":
@@ -288,7 +226,7 @@ namespace OSProject
                             Console.WriteLine("\nv.1.0.0");
                             break;
 
-                        case "dnt":
+                        case "3":
                             DateTime date = DateTime.Now;
                             Console.WriteLine(date);
                             break;
@@ -298,16 +236,15 @@ namespace OSProject
                             Run();
                             break;
 
-                        case "shutdown":
+                        case "7":
                             Sys.Power.Shutdown();
                             break;
 
-                        case "restart":
+                        case "6":
                             Sys.Power.Reboot();
                             break;
 
-                        case "about":
-                            LogoASCII.main();
+                        case "1":
                             About.main();
                             break;
 
