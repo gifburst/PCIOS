@@ -30,6 +30,7 @@ namespace OSProject
                 Directory.CreateDirectory(@"0:\RecycleBin");
             }
             Console.Clear();
+            Console.ForegroundColor = ConsoleColor.Orange;
             console.Writeline ("┌─ [0] PCI/OS ─┐ ┌─ [1] Apps ─┐ ┌─ [2] Reboot ─┐ ┌─ [3] Shutdown ─┐");
             
 
