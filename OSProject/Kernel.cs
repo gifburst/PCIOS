@@ -30,7 +30,7 @@ namespace OSProject
                 Directory.CreateDirectory(@"0:\RecycleBin");
             }
             Console.Clear();
-            console.Writeline ("[1] PCI/OS [2] Calculator [3] Clock [4] Write [5] X-O game [6] Reboot [7] Shutdown");
+            console.Writeline ("┌─ [0] PCI/OS ─┐ ┌─ [1] Apps ─┐ ┌─ [2] Reboot ─┐ ┌─ [3] Shutdown ─┐");
             
 
                     choice = Console.ReadLine();
@@ -160,92 +160,21 @@ namespace OSProject
                             break;
 
                             
-                        case "4": // Text Editor.
-                            Editor.Main();
+                    
+
+                        case "1":
+                            Programs.main();
                             break;
-
-                        case "2": // Calculator.
-                            Calculator.main();
-                           break;
-
-                        case "5": // X-O Game.
-                           Console.Clear();
-                           Game.Main();
-                           break;
-
-                        case "fstats":
-                            FileSystem.checkstat();
-                            break;
-
-                        case "md":
-                            f.makedir();
-                            break;
-
-                        case "curr":
-                            f.current();
-                            break;
-
-                        case "cd":
-                            f.changedir();
-                            break;
-
-                        case "ls":
-                            f.list();
-                            break;
-
-                        case "df":
-                            f.deletef();
-                            break;
-
-                        case "dd": // Bugging out.
-                            f.deleted();
-                            break;
-
-                        case "cp":
-                            f.copy();
-                            break;
-
-                        case "mv": // Bugging out.
-                                   //f.move();
-                            break;
-
-                        case "search":
-                            f.search();
-                            break;
-
-                        case "cls":
-                            Console.Clear();
-                            break;
-
-                        case "echo":
-                            Console.WriteLine("Enter something to echo out!");
-                            String sentence = Console.ReadLine();
-                            Console.WriteLine(sentence);
-                            break;
-
-                        case "version":
-                            Console.WriteLine("\nv.1.0.0");
-                            break;
-
-                        case "3":
-                            DateTime date = DateTime.Now;
-                            Console.WriteLine(date);
-                            break;
-
-                        case "lock":
-                            x = Lock.main();
-                            Run();
-                            break;
-
-                        case "7":
+                            
+                        case "2":
                             Sys.Power.Shutdown();
                             break;
 
-                        case "6":
+                        case "3":
                             Sys.Power.Reboot();
                             break;
 
-                        case "1":
+                        case "0":
                             About.main();
                             break;
 
