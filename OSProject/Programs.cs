@@ -18,13 +18,12 @@ namespace OSProject
             bool exit = false;
             do
             {
-                Console.WriteLine("Programs installed on SQUIRRIX and SQUIRRIX WARE\n");
-                Console.WriteLine("1. Text Editor"); 
-                Console.WriteLine("2. Calculator");
-                Console.WriteLine("3. Music Player"); 
-                Console.WriteLine("4. X-O Game"); 
-                Console.WriteLine("5. SqUIrrel");
-                Console.WriteLine("6. Exit\n\n");
+                Console.WriteLine("╔═ Programs installed on PCI/OS for ChipPad ═╗\n");
+                Console.WriteLine("┌─ 1. Text Editor ─┐"); 
+                Console.WriteLine("┌─ 2. Calculator ─┐");
+                Console.WriteLine("┌─ 3. Date ─┐"); 
+                Console.WriteLine("┌─ 4. X-O Game ─┐"); 
+                Console.WriteLine("┌─ 5. Exit ─┐\n\n");
 
                 Console.WriteLine("Enter the choice of program.");
                 pchoice = Console.ReadLine();
@@ -38,20 +37,17 @@ namespace OSProject
                     case "2": // Calculator.
                         Calculator.main();
                         break;
-
-                    case "3": // Music Player.
-                        Song.main();
+                        
+                    case "3":
+                        DateTime date = DateTime.Now;
+                        Console.WriteLine(date);
                         break;
-
+                        
                     case "4": // X-O Game.
                         Game.Main();
                         break;
 
-                    case "5": // Basic GUI.
-                        GUI g = new GUI();
-                        g.main();
-                        break;
-                    case "6":
+                    case "5":
                         exit = true;
                         break;
 
